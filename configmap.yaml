@@ -1,0 +1,14 @@
+apiVersion: v1kub
+kind: ConfigMap
+metadata:
+  name: nginx-conf
+data: # vamos usar uma key
+  nginx.conf: |
+
+    server {
+      listen 80;
+      index index.php index.html;
+      root /usr/share/nginx/html;
+#       rewrite ^/$ http://google.com permanent;
+      rewrite ^/$ CodeEducation permanent;
+    }
